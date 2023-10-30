@@ -25,8 +25,10 @@ function checkIfWin() {
     ) {
       alert(`Player ${sq1.innerText} has won`);
       resetGame();
+      return true;
     }
   }
+  return false;
 }
 
 function resetGame() {
@@ -44,7 +46,9 @@ function checkIfDraw() {
   if (filled_squares == 9) {
     alert("Match has resulted in draw");
     resetGame();
+    return true;
   }
+  return false;
 }
 
 function clearBoard() {
@@ -58,10 +62,10 @@ function makeMove(e) {
   if (e.target.innerText == "") {
     e.target.innerText = turn;
 
-    checkIfWin();
-    checkIfDraw();
-    turn = turn == "X" ? "O" : "X";
-    playerTurn.innerText = `Turn: Player ${turn}`;
+    if (!checkIfDraw() && !checkIfWin()) {
+      turn = turn == "X" ? "O" : "X";
+      playerTurn.innerText = `Turn: Player ${turn}`;
+    }
   }
 }
 
