@@ -1,0 +1,24 @@
+
+.container {
+  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 7rem);
+  grid-gap: 10px;
+  grid-template-rows: repeat(3, 7rem);
+}
+.container div {
+  border: 1px solid black;
+}
+.info{
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+.container .square{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container .square{
+  font-size: 5em;
+}
